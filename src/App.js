@@ -34,11 +34,10 @@ class App extends React.Component {
       apiError,
       loading,
       searchTopic,
-      totalResults
     } = this.state;
     return ( 
       <Container>
-        {/* style={{backgroundColor: '#D5CFCE'}}  */}
+        
         <Header as="h2" style={{ textAlign: "center", margin: 20 }}>
           Welcome to CNN news
         </Header>
@@ -48,7 +47,7 @@ class App extends React.Component {
         )}
         {articles.length > 0 && (
           <Header as="h4" style={{ textAlign: "center", margin: 20 }}>
-            Found {totalResults} news based on {searchTopic}
+            Here you can find most recent news based on <b>"{searchTopic}"</b>
           </Header>
         )}
         {articles.length > 0 && <ArticleList articles={articles} />}

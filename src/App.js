@@ -2,6 +2,7 @@ import React from "react";
 import { getArticles } from "./api";
 import ArticleList from "./ArticleList";
 import SearchBar from "./searchBar";
+import SearchPagination from "./searchPagination";
 import { Container, Header } from "semantic-ui-react";
 
 class App extends React.Component {
@@ -36,10 +37,10 @@ class App extends React.Component {
       searchTopic,
     } = this.state;
     return ( 
-      <Container>
+      <Container style={{backgroundColor: 'lightgray'}}>
         
         <Header as="h2" style={{ textAlign: "center", margin: 20 }}>
-          Welcome to CNN news
+          Welcome to MyNews, a news application with updated and real-life news
         </Header>
         <SearchBar searchForTopic={this.searchForTopic} />
         {loading && (
@@ -52,7 +53,12 @@ class App extends React.Component {
         )}
         {articles.length > 0 && <ArticleList articles={articles} />}
         {apiError && <p>Could not fetch any articles. Please try again.</p>}
+        
+         <SearchPagination/>  
+        
+
       </Container>
+
     );
   }
 }

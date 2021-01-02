@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Input
-              placeholder="Search on CNN"
+              placeholder="Search desired topic"
               name="topic"
               value={this.state.searchTopic}
               onChange={this.handleChange}
